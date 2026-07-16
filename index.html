@@ -3,492 +3,642 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Bo Yang, MD, PhD, FRSM | Wenzhou Medical University</title>
-    <!-- Tailwind CSS 强大的响应式学术排版引擎 -->
+    <title>Dr. Bo Yang, MD, PhD, FRSM | Wenzhou Medical University & Karolinska Institutet</title>
+    <!-- 引入 Tailwind CSS 构建现代、极简、高贵学术质感 -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts 引入高品质 Inter 字体 -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome 学术常用图标库 -->
+    <!-- 引入 Google Fonts 提升英文字体与学术优雅感 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- 引入 FontAwesome 学术图标库 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            color: #1e293b;
             background-color: #f8fafc;
+            color: #1e293b;
+            scroll-behavior: smooth;
         }
-        /* 严谨优雅的学术超链接样式 */
+        .serif-title {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+        /* 极致简约优雅的学术超链接样式 */
         .academic-link {
-            color: #2563eb;
+            color: #4f46e5;
             text-decoration: none;
             transition: all 0.15s ease;
             border-bottom: 1px solid transparent;
         }
         .academic-link:hover {
-            color: #1d4ed8;
-            border-bottom-color: #1d4ed8;
+            color: #4338ca;
+            border-bottom-color: #4338ca;
         }
     </style>
 </head>
 <body class="antialiased min-h-screen">
 
-    <!-- 全局两栏布局大容器：在桌面端为双栏，在移动端自动合为单栏 -->
-    <div class="max-w-7xl mx-auto px-4 py-8 md:py-16">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+    <!-- 顶部学术氛围渐变色彩条 -->
+    <div class="h-2.5 bg-gradient-to-r from-indigo-700 via-blue-600 to-sky-500 w-full sticky top-0 z-50"></div>
+
+    <div class="max-w-7xl mx-auto px-4 py-8 md:py-16 sm:px-6 lg:px-8">
+        
+        <!-- 双栏黄金排版布局 (左侧固定个人名片 + 右侧主内容区) -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12">
             
-            <!-- ==================== 左侧：学术名片栏 (占 4/12 宽度) ==================== -->
+            <!-- ==================== STREAMING_CHUNK: Building left academic sidebar with metrics and profile links ==================== -->
             <aside class="lg:col-span-4 space-y-6">
-                <!-- 个人核心信息卡片 -->
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 text-center lg:text-left">
-                    <!-- 头像区域（自适应且居中） -->
-                    <div class="w-40 h-40 md:w-48 md:h-48 mx-auto lg:mx-0 mb-6 relative">
+                
+                <!-- 个人核心卡片 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-8 text-center lg:text-left relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-indigo-50 rounded-full -mr-8 -mt-8 opacity-50"></div>
+                    
+                    <!-- 个人高清头像 (自动读取同目录下的 avatar.jpg) -->
+                    <div class="relative w-40 h-40 md:w-48 md:h-48 mx-auto lg:mx-0 mb-6 group">
                         <img src="avatar.jpg" 
                              alt="Dr. Bo Yang" 
-                             class="w-full h-full rounded-2xl object-cover shadow-md border-2 border-slate-100"
-                             onerror="this.src='https://placehold.co/400x400/ececec/666666?text=BY'">
+                             class="w-full h-full rounded-2xl object-cover shadow-md border-4 border-white transition-transform duration-300 group-hover:scale-[1.02]"
+                             onerror="this.src='https://placehold.co/400x400/4f46e5/ffffff?text=BY'">
                     </div>
-                    
-                    <!-- 姓名及头衔勋章 -->
-                    <h1 class="text-3xl font-extrabold tracking-tight text-slate-900">Bo Yang (杨波)</h1>
-                    <p class="text-sm font-semibold text-blue-600 mt-1">MD, PhD, FRSM</p>
-                    <p class="text-sm font-medium text-slate-500 mt-2 leading-relaxed">
-                        Research Professor of Nutritional Epidemiology & Lipid Medicine
-                    </p>
 
-                    <!-- 学术研究机构 -->
-                    <div class="mt-4 pt-4 border-t border-slate-100 space-y-3 text-sm text-slate-600 text-left">
-                        <div class="flex items-start gap-2">
-                            <i class="fa-solid fa-hospital-user mt-1 text-slate-400"></i>
-                            <div>
-                                <span class="font-semibold block text-slate-800">Director</span>
-                                Institute of Lipids Medicine, <a href="https://www.wmu.edu.cn" target="_blank" class="academic-link">Wenzhou Medical University</a>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-2">
-                            <i class="fa-solid fa-plane-departure mt-1 text-slate-400"></i>
-                            <div>
-                                <span class="font-semibold block text-slate-800">Visiting Researcher (2025–2026)</span>
-                                Dept. of Medical Epidemiology and Biostatistics, <a href="https://ki.se" target="_blank" class="academic-link">Karolinska Institutet</a>, Sweden
-                            </div>
-                        </div>
+                    <!-- 姓名 & 荣誉勋衔 -->
+                    <div class="space-y-2">
+                        <h1 class="text-3xl font-extrabold text-slate-900 tracking-tight serif-title">Bo Yang (杨波)</h1>
+                        <p class="text-xs font-bold tracking-wider text-indigo-600 uppercase">MD, PhD, FRSM</p>
+                        <p class="text-[0.95rem] text-slate-600 font-medium leading-relaxed mt-2">
+                            Research Professor & Director of Institute of Lipids Medicine, Wenzhou Medical University
+                        </p>
+                        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-100 mt-2">
+                            <i class="fa-solid fa-award"></i> Elected Fellow (FRSM)
+                        </span>
                     </div>
-                </div>
 
-                <!-- 学术影响力硬核数据看板 -->
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
-                    <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">Academic Metrics</h3>
-                    <div class="grid grid-cols-3 gap-2 text-center">
-                        <div class="bg-slate-50 rounded-xl p-3 border border-slate-100/60">
+                    <hr class="my-6 border-slate-100" />
+
+                    <!-- 核心学术影响力数据面板 (Academic Metrics) -->
+                    <div class="grid grid-cols-3 gap-2 bg-slate-50 p-3 rounded-xl border border-slate-100 mb-6">
+                        <div class="text-center">
                             <span class="block text-xl font-bold text-slate-800">60+</span>
-                            <span class="text-[10px] font-medium text-slate-400 uppercase">Papers</span>
+                            <span class="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">Papers</span>
                         </div>
-                        <div class="bg-slate-50 rounded-xl p-3 border border-slate-100/60">
+                        <div class="text-center border-x border-slate-200/80">
                             <span class="block text-xl font-bold text-slate-800">2,983</span>
-                            <span class="text-[10px] font-medium text-slate-400 uppercase">Citations</span>
+                            <span class="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">Citations</span>
                         </div>
-                        <div class="bg-slate-50 rounded-xl p-3 border border-slate-100/60">
+                        <div class="text-center">
                             <span class="block text-xl font-bold text-slate-800">27</span>
-                            <span class="text-[10px] font-medium text-slate-400 uppercase">H-Index</span>
+                            <span class="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">H-index</span>
+                        </div>
+                    </div>
+
+                    <!-- 官方学术主页直达按钮 -->
+                    <div class="space-y-2">
+                        <h3 class="text-xs font-semibold uppercase tracking-wider text-slate-400 text-left mb-2">Scholarly Profiles</h3>
+                        <div class="grid grid-cols-2 gap-2">
+                            <a href="https://scholar.google.com/citations?user=arm2uCUAAAAJ&hl=en" target="_blank" 
+                               class="flex items-center justify-center gap-2 px-3 py-2 text-xs font-medium bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg transition-colors border border-slate-200">
+                                <i class="fa-brands fa-google text-blue-500"></i> Google Scholar
+                            </a>
+                            <a href="https://orcid.org/0000-0003-4475-2426" target="_blank" 
+                               class="flex items-center justify-center gap-2 px-3 py-2 text-xs font-medium bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg transition-colors border border-slate-200">
+                                <i class="fa-brands fa-orcid text-emerald-500"></i> ORCID Profile
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- 个人联系信息 -->
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 space-y-4">
-                    <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Contact Details</h3>
-                    <div class="space-y-3 text-sm text-slate-600">
-                        <div class="flex items-start gap-3">
-                            <i class="fa-solid fa-envelope mt-0.5 text-slate-400"></i>
-                            <div class="space-y-1">
-                                <a href="mailto:yb@wmu.edu.cn" class="academic-link block">yb@wmu.edu.cn (WMU)</a>
-                                <a href="mailto:bo.yang@ki.se" class="academic-link block">bo.yang@ki.se (KI)</a>
+                <!-- 个人联系细节卡片 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-8">
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">Contact Details</h3>
+                    <ul class="space-y-4 text-[0.9rem] text-slate-600">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-regular fa-envelope text-indigo-500 mt-1"></i>
+                            <div class="space-y-0.5">
+                                <p class="text-xs font-medium text-slate-400">Institutional Email</p>
+                                <a href="mailto:yb@wmu.edu.cn" class="academic-link font-medium break-all">yb@wmu.edu.cn</a>
                             </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-building-columns text-indigo-500 mt-1"></i>
+                            <div class="space-y-0.5">
+                                <p class="text-xs font-medium text-slate-400">Karolinska Institutet Email</p>
+                                <a href="mailto:bo.yang@ki.se" class="academic-link font-medium break-all">bo.yang@ki.se</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-map-pin text-indigo-500 mt-1"></i>
+                            <div class="space-y-0.5">
+                                <p class="text-xs font-medium text-slate-400">Office Address</p>
+                                <p class="leading-relaxed">
+                                    School of Public Health, Wenzhou Medical University, Ouhai District, Wenzhou, Zhejiang, 325035, China
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 教育背景 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-8">
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">Education</h3>
+                    <div class="relative pl-4 border-l-2 border-indigo-100 space-y-6">
+                        <div class="relative">
+                            <div class="absolute -left-[21px] top-1.5 w-2 h-2 rounded-full bg-indigo-500 border-2 border-white ring-4 ring-indigo-50"></div>
+                            <span class="text-xs font-semibold text-indigo-600 block">2012 – 2016</span>
+                            <span class="font-bold text-slate-800 text-[0.9rem]">Ph.D. in Food Science</span>
+                            <span class="block text-xs text-slate-500">Zhejiang University, China</span>
                         </div>
-                        <div class="flex items-start gap-3">
-                            <i class="fa-solid fa-location-dot mt-0.5 text-slate-400"></i>
-                            <span>School of Public Health, Wenzhou Medical University, Ouhai District, Wenzhou, Zhejiang, 325035, China</span>
+                        <div class="relative">
+                            <div class="absolute -left-[21px] top-1.5 w-2 h-2 rounded-full bg-indigo-500 border-2 border-white ring-4 ring-indigo-50"></div>
+                            <span class="text-xs font-semibold text-indigo-600 block">2002 – 2005</span>
+                            <span class="font-bold text-slate-800 text-[0.9rem]">M.D. in Sports Medicine</span>
+                            <span class="block text-xs text-slate-500">Yangzhou University, China</span>
+                        </div>
+                        <div class="relative">
+                            <div class="absolute -left-[21px] top-1.5 w-2 h-2 rounded-full bg-indigo-500 border-2 border-white ring-4 ring-indigo-50"></div>
+                            <span class="text-xs font-semibold text-indigo-600 block">1997 – 2002</span>
+                            <span class="font-bold text-slate-800 text-[0.9rem]">Bachelor of Medicine in Public Health</span>
+                            <span class="block text-xs text-slate-500">Baotou Medical College, China</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- 学术平台快速链接入口（已填入杨老师真实的学术账号） -->
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 space-y-4">
-                    <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400">Scholarly Profiles</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-2">
-                        <!-- 已替换为正确的 Google Scholar 链接 -->
-                        <a href="https://scholar.google.com/citations?user=arm2uCUAAAAJ" target="_blank" 
-                           class="flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-semibold border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 transition">
-                            <span class="flex items-center gap-2">
-                                <i class="fa-graduation-cap fas text-blue-600"></i> Google Scholar
-                            </span>
-                            <i class="fa-solid fa-arrow-up-right-from-square text-slate-300 text-xs"></i>
-                        </a>
-                        <!-- 已替换为正确的 ORCID 链接 -->
-                        <a href="https://orcid.org/0000-0003-4475-2426" target="_blank" 
-                           class="flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-semibold border border-emerald-100 bg-emerald-50/30 hover:bg-emerald-50 text-emerald-700 transition">
-                            <span class="flex items-center gap-2">
-                                <i class="fa-brands fa-orcid text-emerald-500 text-base"></i> ORCID Profile
-                            </span>
-                            <i class="fa-solid fa-arrow-up-right-from-square text-emerald-300 text-xs"></i>
-                        </a>
+                <!-- 期刊编辑与学术评审工作 -->
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-8">
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Academic Services</h3>
+                    <div class="space-y-4 text-xs leading-relaxed text-slate-600">
+                        <div>
+                            <p class="font-bold text-slate-800"><i class="fa-regular fa-star text-indigo-500 mr-1.5"></i> Editorial Board Member</p>
+                            <p class="text-slate-500 mt-1">British Journal of Nutrition (Statistical Editor, 2017 – 2022)</p>
+                        </div>
+                        <div>
+                            <p class="font-bold text-slate-800"><i class="fa-regular fa-star text-indigo-500 mr-1.5"></i> Regular Peer Reviewer</p>
+                            <p class="text-slate-500 mt-1 leading-relaxed">
+                                Brain, Behavior, and Immunity; Progress in Lipid Research; Redox Biology; Critical Reviews in Food Science and Nutrition; Food & Function; Molecular Nutrition & Food Research; Nutrients; Frontiers in Nutrition.
+                            </p>
+                        </div>
                     </div>
                 </div>
+
             </aside>
             
-            <!-- ==================== 右侧：主学术内容区 (占 8/12 宽度) ==================== -->
+            <!-- ==================== 右侧主内容区 (Main Content) ==================== -->
             <main class="lg:col-span-8 space-y-8">
                 
-                <!-- 个人概述 Biography -->
-                <section class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-8">
-                    <h2 class="text-2xl font-bold text-slate-900 border-b border-slate-100 pb-3 mb-4">Biography</h2>
-                    <div class="space-y-4 text-slate-600 leading-relaxed text-[1.025rem]">
-                        <p>
-                            Dr. Bo Yang is an established academic researcher, university research professor, and an elected <strong>Fellow of the Royal Society of Medicine (FRSM, UK)</strong>. He currently serves as the Director of the Institute of Lipids Medicine at Wenzhou Medical University, China, and is undertaking an active tenure as a Visiting Researcher at the prestigious <strong>Karolinska Institutet</strong>, Sweden.
-                        </p>
-                        <p>
-                            With a robust portfolio encompassing over 70 peer-reviewed publications and a prominent citation profile, Dr. Yang specializes in lipid nutrition, nutritional epidemiology, and nutritional psychiatry. His pioneering work bridges large-scale multi-centric population datasets (e.g., NHANES) with cutting-edge bioinformatics, network pharmacology frameworks, and selective laboratory experimental validations. 
-                        </p>
-                        <p>
-                            He holds established national leadership roles as vice-chair across leading scientific councils in China and maintains proactive collaborations across international academic and medical networks.
-                        </p>
-                    </div>
+                <!-- 个人学术简介 -->
+                <section class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-8 space-y-4">
+                    <h2 class="text-2xl font-bold text-slate-900 serif-title">Biography</h2>
+                    <p class="text-slate-600 leading-relaxed text-[0.95rem]">
+                        <strong>Dr. Bo Yang</strong> is an established academic researcher, university research professor, and an elected Fellow of the Royal Society of Medicine (FRSM). He currently serves as the Director of the Institute of Lipids Medicine at Wenzhou Medical University, and is undertaking an active tenure as a Visiting Researcher at the Karolinska Institute, Sweden.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed text-[0.95rem]">
+                        With a robust portfolio encompassing over 70 peer-reviewed publications and a prominent citation profile (nearly 3,000 citations), Dr. Yang specializes in lipid nutrition, nutritional epidemiology, and nutritional psychiatry. His pioneering work bridges large-scale multi-centric population datasets (e.g., NHANES) with cutting-edge bioinformatics, network pharmacology frameworks, and selective laboratory experimental validations. He holds established national leadership roles as vice-chair across leading scientific councils in China and maintains proactive collaborations across international academic and medical networks.
+                    </p>
                 </section>
 
-                <!-- 教育背景 & 学术兼职与荣誉（并列排版） -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- 教育背景 Educational Background -->
-                    <section class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
-                        <h2 class="text-lg font-bold text-slate-900 border-b border-slate-100 pb-2 mb-3">Education</h2>
-                        <div class="space-y-3">
-                            <div class="relative pl-4 border-l-2 border-blue-500">
-                                <span class="text-xs font-bold text-blue-600 block">2012 – 2016</span>
-                                <span class="font-semibold text-slate-800 text-sm">Ph.D. in Food Science</span>
-                                <span class="text-xs text-slate-500 block">Zhejiang University, China</span>
-                            </div>
-                            <div class="relative pl-4 border-l-2 border-slate-200">
-                                <span class="text-xs font-bold text-slate-500 block">2002 – 2005</span>
-                                <span class="font-semibold text-slate-800 text-sm">M.D. in Sports Medicine</span>
-                                <span class="text-xs text-slate-500 block">Yangzhou University, China</span>
-                            </div>
-                            <div class="relative pl-4 border-l-2 border-slate-200">
-                                <span class="text-xs font-bold text-slate-500 block">1997 – 2002</span>
-                                <span class="font-semibold text-slate-800 text-sm">B.M. in Public Health</span>
-                                <span class="text-xs text-slate-500 block">Baotou Medical College, China</span>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- 学术兼职与荣誉 Honors & Affiliations -->
-                    <section class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6">
-                        <h2 class="text-lg font-bold text-slate-900 border-b border-slate-100 pb-2 mb-3">Honors & Affiliations</h2>
-                        <ul class="space-y-2.5 text-xs md:text-sm text-slate-600">
-                            <li class="flex items-start gap-2">
-                                <span class="font-bold text-blue-600 mt-0.5">2026–Pres.</span>
-                                <span><strong>Fellow (FRSM)</strong>, The Royal Society of Medicine, UK</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="font-bold text-slate-500 mt-0.5">2025–2029</span>
-                                <span><strong>Vice Chairman</strong>, Sports Nutrition Council, CNS</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="font-bold text-slate-500 mt-0.5">2021–2026</span>
-                                <span><strong>Vice Chairman</strong>, Food Nutrition Council, CAGG</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="font-bold text-slate-500 mt-0.5">2023</span>
-                                <span><strong>Research Contribution Award</strong>, APSCN</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="font-bold text-slate-500 mt-0.5">2021</span>
-                                <span><strong>Outstanding Teacher</strong>, Wenzhou Medical Univ.</span>
-                            </li>
-                        </ul>
-                    </section>
-                </div>
-
-                <!-- 博士后及任教经历 Past Experience -->
-                <section class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-8">
-                    <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 mb-4">Past Professional Experience</h2>
-                    <div class="space-y-4">
-                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-1 border-b border-slate-50 pb-3">
-                            <div>
-                                <h4 class="font-bold text-slate-800 text-base">Postdoctoral Research Fellow (Nutritional Psychiatry)</h4>
-                                <span class="text-sm text-slate-500">China Medical University, Taiwan</span>
-                            </div>
-                            <span class="text-xs font-semibold px-2.5 py-1 bg-blue-50 text-blue-700 rounded-full">2018 – 2019</span>
-                        </div>
-                        <p class="text-sm text-slate-500 leading-relaxed -mt-2">
-                            <strong>Core Focus:</strong> Clinical trial evaluation, cohort dynamics, and molecular mechanisms detailing omega-3 PUFA regulation on psychiatric conditions and neurological cross-talk.
-                        </p>
-                        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-1">
-                            <div>
-                                <h4 class="font-bold text-slate-800 text-base">Assistant Professor</h4>
-                                <span class="text-sm text-slate-500">Department of Preventive Medicine, Wenzhou Medical University, China</span>
-                            </div>
-                            <span class="text-xs font-semibold px-2.5 py-1 bg-slate-100 text-slate-600 rounded-full">2005 – 2012</span>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 科研基金课题 Research Grants & Funding -->
-                <section class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-8">
-                    <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 mb-5">Research Grants & Funding</h2>
-                    
+                <!-- 当前及过往任职状况 -->
+                <section class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-8 space-y-4">
+                    <h2 class="text-2xl font-bold text-slate-900 serif-title">Professional Appointments</h2>
                     <div class="space-y-6">
-                        <!-- 主持项目 As PI -->
-                        <div>
-                            <h3 class="text-xs font-bold uppercase tracking-wider text-blue-600 mb-3 flex items-center gap-1.5">
-                                <span class="w-1.5 h-3 bg-blue-500 rounded-sm"></span> As Principal Investigator (PI)
-                            </h3>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="bg-slate-50/50 p-4 rounded-xl border border-slate-100">
-                                    <span class="text-[10px] font-bold text-slate-400 block mb-1">NSF OF ZHEJIANG | LMS26H2600002</span>
-                                    <h4 class="font-semibold text-slate-800 text-sm leading-snug mb-2">Mechanism of EPA alleviating vascular remodeling through regulating Ang II-induced macrophage polarization through Ang-(1–7)-Mas axis</h4>
-                                    <p class="text-[11px] text-slate-500"><strong>Timeline:</strong> 2025 – 2027 | <strong>Budget:</strong> 150,000 CNY</p>
-                                </div>
-                                <div class="bg-slate-50/50 p-4 rounded-xl border border-slate-100">
-                                    <span class="text-[10px] font-bold text-slate-400 block mb-1">CNS-DSM RESEARCH GRANT | 2017-001</span>
-                                    <h4 class="font-semibold text-slate-800 text-sm leading-snug mb-2">Effects and regulatory mechanisms of n-3 fatty acids on cardiovascular metabolic risk in hypertensive populations</h4>
-                                    <p class="text-[11px] text-slate-500"><strong>Timeline:</strong> 2021 – 2023 | <strong>Budget:</strong> 150,000 CNY</p>
-                                </div>
-                                <div class="bg-slate-50/50 p-4 rounded-xl border border-slate-100">
-                                    <span class="text-[10px] font-bold text-slate-400 block mb-1">TALENT PROGRAM OF PUBLIC HEALTH</span>
-                                    <h4 class="font-semibold text-slate-800 text-sm leading-snug mb-2">Impacts and mechanisms of omega-3 polyunsaturated fatty acids on cardiovascular metabolic risk</h4>
-                                    <p class="text-[11px] text-slate-500"><strong>Status:</strong> Active | <strong>Budget:</strong> 300,000 CNY</p>
-                                </div>
-                                <div class="bg-slate-50/50 p-4 rounded-xl border border-slate-100">
-                                    <span class="text-[10px] font-bold text-slate-400 block mb-1">WENZHOU SPECIAL PROJECT | X20210055</span>
-                                    <h4 class="font-semibold text-slate-800 text-sm leading-snug mb-2">Research on community sports nutrition management models in Wenzhou</h4>
-                                    <p class="text-[11px] text-slate-500"><strong>Timeline:</strong> 2021 – 2023 | <strong>Budget:</strong> 120,000 CNY</p>
-                                </div>
+                        <div class="flex flex-col sm:flex-row sm:justify-between items-start gap-2">
+                            <div>
+                                <h3 class="font-bold text-slate-800 text-lg">Director & Research Professor</h3>
+                                <p class="text-slate-500 text-sm">Institute of Lipids Medicine, School of Public Health, Wenzhou Medical University</p>
                             </div>
+                            <span class="px-2.5 py-1 rounded bg-indigo-50 text-indigo-700 text-xs font-semibold sm:shrink-0">2017 – Present</span>
                         </div>
-
-                        <!-- 共同主持项目 As Co-PI -->
-                        <div>
-                            <h3 class="text-xs font-bold uppercase tracking-wider text-emerald-600 mb-3 flex items-center gap-1.5">
-                                <span class="w-1.5 h-3 bg-emerald-500 rounded-sm"></span> As Co-Investigator (Co-PI)
-                            </h3>
-                            <div class="bg-slate-50/50 p-4 rounded-xl border border-slate-100">
-                                <span class="text-[10px] font-bold text-slate-400 block mb-1">NATIONAL NATURAL SCIENCE FOUNDATION OF CHINA (NSFC) | 81973056 / 81773369</span>
-                                <h4 class="font-semibold text-slate-800 text-sm leading-snug mb-2">Mechanisms of dietary n-3 fatty acids regulating glucose metabolism and Insulin/IGF1 signaling in gestational diabetic dams and their offspring</h4>
-                                <p class="text-[11px] text-slate-500"><strong>Timeline:</strong> 2018 – 2021 | <strong>Budget:</strong> 450,000 CNY</p>
+                        <hr class="border-slate-100" />
+                        <div class="flex flex-col sm:flex-row sm:justify-between items-start gap-2">
+                            <div>
+                                <h3 class="font-bold text-slate-800 text-lg">Visiting Researcher / Scholar</h3>
+                                <p class="text-slate-500 text-sm">Department of Medical Epidemiology and Biostatistics, Karolinska Institute, Sweden</p>
                             </div>
+                            <span class="px-2.5 py-1 rounded bg-indigo-50 text-indigo-700 text-xs font-semibold sm:shrink-0">2025 – 2026</span>
+                        </div>
+                        <hr class="border-slate-100" />
+                        <div class="flex flex-col sm:flex-row sm:justify-between items-start gap-2">
+                            <div>
+                                <h3 class="font-bold text-slate-800 text-lg">Postdoctoral Research Fellow (Nutritional Psychiatry)</h3>
+                                <p class="text-slate-500 text-sm">China Medical University, Taiwan</p>
+                                <p class="text-slate-500 text-xs mt-1">Core Focus: Clinical trial evaluation, cohort dynamics, and molecular mechanisms detailing omega-3 PUFA regulation on psychiatric conditions and neurological cross-talk.</p>
+                            </div>
+                            <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-600 text-xs font-semibold sm:shrink-0">2018 – 2019</span>
+                        </div>
+                        <hr class="border-slate-100" />
+                        <div class="flex flex-col sm:flex-row sm:justify-between items-start gap-2">
+                            <div>
+                                <h3 class="font-bold text-slate-800 text-lg">Assistant Professor</h3>
+                                <p class="text-slate-500 text-sm">Department of Preventive Medicine, Wenzhou Medical University, China</p>
+                            </div>
+                            <span class="px-2.5 py-1 rounded bg-slate-100 text-slate-600 text-xs font-semibold sm:shrink-0">2005 – 2012</span>
                         </div>
                     </div>
                 </section>
 
-                <!-- 学术期刊编辑审稿 Editorial Roles & Journal Services -->
-                <section class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-8">
-                    <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 mb-4">Editorial Roles & Peer Review</h2>
-                    <div class="space-y-4">
-                        <div class="flex items-start gap-3">
-                            <div class="w-2 h-2 rounded-full bg-blue-500 mt-2"></div>
-                            <p class="text-sm text-slate-600">
-                                <strong>Statistical Editor & Editorial Board Member:</strong> <span class="italic text-slate-800">British Journal of Nutrition</span> (2017 – 2022)
-                            </p>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="w-2 h-2 rounded-full bg-slate-300 mt-2"></div>
-                            <p class="text-sm text-slate-600">
-                                <strong>Regular Reviewer for prestigious SCI journals:</strong> 
-                                <span class="text-slate-500 italic block mt-1 leading-relaxed">
-                                    Brain, Behavior, and Immunity; Progress in Lipid Research; Redox Biology; Critical Reviews in Food Science and Nutrition; Food & Function; Molecular Nutrition & Food Research; Nutrients; Frontiers in Nutrition.
-                                </span>
-                            </p>
-                        </div>
-                    </div>
-                </section>
-
-                <!-- 会议主持及特邀报告 Conference Leadership & Invited Keynotes -->
-                <section class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-8">
-                    <h2 class="text-xl font-bold text-slate-900 border-b border-slate-100 pb-3 mb-5">Conference Leadership & Invited Lectures</h2>
+                <!-- 科研基金与项目 -->
+                <section class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-8 space-y-6">
+                    <h2 class="text-2xl font-bold text-slate-900 serif-title">Research Grants & Funding</h2>
                     
-                    <div class="space-y-6 text-sm text-slate-600">
-                        <div>
-                            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Session Chairmanship & Executive Roles</h3>
-                            <ul class="space-y-3 pl-4 list-disc marker:text-slate-400">
-                                <li><strong>Session Chair</strong>, Session on Clinical Research and Translation, 4th International Symposium on Omega-3 Fatty Acids and Global Health (2025) | Dongguan, China</li>
-                                <li><strong>Session Chair</strong>, Session on Fatty Acids and Human Health, 8th Cross-Strait, Hong Kong, and Macao Congress on Nutritional Science (2025) | Xi'an, China</li>
-                                <li><strong>Session Chair</strong>, Session on Physical and Mental Health, 3rd International Symposium on Omega-3 Fatty Acids and Global Health (2024) | Dongguan, China</li>
-                                <li><strong>Executive Forum Chair</strong>, Youth Scholar Research Forum, Food and Nutrition Council, CAGG (4 Consecutive Sessions, 2021 – 2024) | Beijing, China</li>
-                                <li><strong>Conference Organizer & Chair</strong>, 2023 Lifecycle Nutrition and Health Innovation Forum & 1st Public Health Training Course, Wenzhou Medical University (2023) | Wenzhou, China</li>
-                            </ul>
+                    <div class="space-y-4">
+                        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 border-b border-slate-100 pb-2">As Principal Investigator (PI)</h3>
+                        
+                        <!-- PI Project 1 -->
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100/80 space-y-2">
+                            <div class="flex justify-between items-start gap-2">
+                                <h4 class="font-bold text-slate-800 text-[0.95rem]">
+                                    Mechanism of EPA alleviating vascular remodeling through regulating Ang II-induced macrophage polarization through Ang-(1–7)-Mas axis
+                                </h4>
+                                <span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2 py-0.5 rounded sm:shrink-0">PI</span>
+                            </div>
+                            <p class="text-xs text-slate-500 leading-relaxed">
+                                <strong>Funding Body:</strong> National Natural Science Foundation of Zhejiang Province | <strong>Grant No:</strong> LMS26H2600002
+                            </p>
+                            <div class="flex justify-between items-center text-xs text-slate-400 pt-1">
+                                <span>Timeline: 2025 – 2027</span>
+                                <span class="font-semibold text-slate-700">150,000 CNY</span>
+                            </div>
                         </div>
 
-                        <div class="pt-2">
-                            <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Selected Keynote Presentations</h3>
-                            <ul class="space-y-3 pl-4 list-disc marker:text-slate-400">
-                                <li><strong>Invited Keynote Speaker</strong> (1st, 2nd, 3rd, & 4th Annual Sessions), International Forum on Fatty Acids and Human Health (Organized by ISOR)</li>
-                                <li><strong>Invited Speaker & Panelist</strong>, 3rd International Symposium on Omega-3 and Global Health (Cardiovascular Disease Tracks, organized by ISOR)</li>
-                            </ul>
+                        <!-- PI Project 2 -->
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100/80 space-y-2">
+                            <div class="flex justify-between items-start gap-2">
+                                <h4 class="font-bold text-slate-800 text-[0.95rem]">
+                                    Effects and regulatory mechanisms of n-3 fatty acids on cardiovascular metabolic risk in hypertensive populations
+                                </h4>
+                                <span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2 py-0.5 rounded sm:shrink-0">PI</span>
+                            </div>
+                            <p class="text-xs text-slate-500 leading-relaxed">
+                                <strong>Funding Body:</strong> DSM Research Special Grant, Chinese Nutrition Society | <strong>Grant No:</strong> 2017-001
+                            </p>
+                            <div class="flex justify-between items-center text-xs text-slate-400 pt-1">
+                                <span>Timeline: 2021 – 2023</span>
+                                <span class="font-semibold text-slate-700">150,000 CNY</span>
+                            </div>
+                        </div>
+
+                        <!-- PI Project 3 -->
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100/80 space-y-2">
+                            <div class="flex justify-between items-start gap-2">
+                                <h4 class="font-bold text-slate-800 text-[0.95rem]">
+                                    Impacts and mechanisms of omega-3 polyunsaturated fatty acids on cardiovascular metabolic risk
+                                </h4>
+                                <span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2 py-0.5 rounded sm:shrink-0">PI</span>
+                            </div>
+                            <p class="text-xs text-slate-500 leading-relaxed">
+                                <strong>Funding Body:</strong> Talent Program of Public Health, Wenzhou Medical University
+                            </p>
+                            <div class="flex justify-between items-center text-xs text-slate-400 pt-1">
+                                <span>Timeline: Active</span>
+                                <span class="font-semibold text-slate-700">300,000 CNY</span>
+                            </div>
+                        </div>
+
+                        <!-- PI Project 4 -->
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100/80 space-y-2">
+                            <div class="flex justify-between items-start gap-2">
+                                <h4 class="font-bold text-slate-800 text-[0.95rem]">
+                                    Research on community sports nutrition management models in Wenzhou
+                                </h4>
+                                <span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2 py-0.5 rounded sm:shrink-0">PI</span>
+                            </div>
+                            <p class="text-xs text-slate-500 leading-relaxed">
+                                <strong>Funding Body:</strong> Wenzhou Science and Technology Commissioner Special Project | <strong>Grant No:</strong> X20210055
+                            </p>
+                            <div class="flex justify-between items-center text-xs text-slate-400 pt-1">
+                                <span>Timeline: 2021 – 2023</span>
+                                <span class="font-semibold text-slate-700">120,000 CNY</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Co-PI Projects -->
+                    <div class="space-y-4 pt-2">
+                        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 border-b border-slate-100 pb-2">As Co-Investigator (Co-PI)</h3>
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-100/80 space-y-2">
+                            <div class="flex justify-between items-start gap-2">
+                                <h4 class="font-bold text-slate-800 text-[0.95rem]">
+                                    Mechanisms of dietary n-3 fatty acids regulating glucose metabolism and Insulin/IGF1 signaling in gestational diabetic dams and their offspring
+                                </h4>
+                                <span class="bg-blue-100 text-blue-800 text-[10px] font-bold px-2 py-0.5 rounded sm:shrink-0">Co-PI</span>
+                            </div>
+                            <p class="text-xs text-slate-500 leading-relaxed">
+                                <strong>Funding Body:</strong> National Natural Science Foundation of China (NSFC) | <strong>Grant No:</strong> 81973056 / 81773369
+                            </p>
+                            <div class="flex justify-between items-center text-xs text-slate-400 pt-1">
+                                <span>Timeline: 2018 – 2021</span>
+                                <span class="font-semibold text-slate-700">450,000 CNY</span>
+                            </div>
                         </div>
                     </div>
                 </section>
 
-                <!-- ==================== 重点：完整论文列表 (12篇) ==================== -->
-                <section class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-8">
-                    <div class="flex justify-between items-center border-b border-slate-100 pb-3 mb-6">
-                        <h2 class="text-xl font-bold text-slate-900">Selected Publications (2022 – 2026)</h2>
-                        <span class="text-xs font-bold px-2 py-1 bg-slate-100 text-slate-500 rounded">Total 12 Recent Papers</span>
-                    </div>
-                    <ul class="space-y-6">
-                        
-                        <!-- 论文 1 -->
-                        <li class="relative pl-5 group border-l-2 border-slate-100 hover:border-blue-500 transition-colors">
-                            <div class="flex flex-wrap items-center gap-2 mb-1">
-                                <span class="text-xs font-bold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200">Redox Biology</span>
-                                <span class="text-xs font-semibold text-slate-400">2026 (Under Review)</span>
+                <!-- 荣誉奖项与学会任职 -->
+                <section class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-8 space-y-4">
+                    <h2 class="text-2xl font-bold text-slate-900 serif-title">Honors & Professional Affiliations</h2>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <li class="p-4 rounded-xl bg-slate-50/70 border border-slate-100 flex items-start gap-3">
+                            <span class="p-2 rounded bg-indigo-50 text-indigo-600 mt-0.5"><i class="fa-solid fa-medal text-xs"></i></span>
+                            <div>
+                                <p class="font-bold text-slate-800 text-[0.9rem]">Fellow (FRSM)</p>
+                                <p class="text-xs text-slate-500 mt-0.5">The Royal Society of Medicine, UK (Elected 2026 – Present)</p>
                             </div>
-                            <h4 class="font-bold text-slate-800 text-[1.025rem] leading-snug group-hover:text-blue-600 transition-colors">
-                                Circulating &alpha;-Linolenic Acid and Biological Aging Acceleration in Diabetes: Insights from Two Independent Populations and Exploratory Mediation by Oxidative Stress
-                            </h4>
-                            <p class="text-xs text-slate-500 mt-1">Hu X, <strong class="text-slate-800 underline">Yang B<sup>#</sup></strong></p>
                         </li>
-
-                        <!-- 论文 2 -->
-                        <li class="relative pl-5 group border-l-2 border-slate-100 hover:border-blue-500 transition-colors">
-                            <div class="flex flex-wrap items-center gap-2 mb-1">
-                                <span class="text-xs font-bold text-slate-700 bg-slate-50 px-1.5 py-0.5 rounded border border-slate-200">Nutrition Journal</span>
-                                <span class="text-xs font-semibold text-slate-400">2026</span>
+                        <li class="p-4 rounded-xl bg-slate-50/70 border border-slate-100 flex items-start gap-3">
+                            <span class="p-2 rounded bg-indigo-50 text-indigo-600 mt-0.5"><i class="fa-solid fa-users-line text-xs"></i></span>
+                            <div>
+                                <p class="font-bold text-slate-800 text-[0.9rem]">Vice Chairman</p>
+                                <p class="text-xs text-slate-500 mt-0.5">Sports Nutrition Council, Chinese Nutrition Society (2025 – 2029)</p>
                             </div>
-                            <h4 class="font-bold text-slate-800 text-[1.025rem] leading-snug group-hover:text-blue-600 transition-colors">
-                                Omega-3 polyunsaturated fatty acids and mortality risk in depression: immune-inflammatory mediation in NHANES 1999–2018
-                            </h4>
-                            <p class="text-xs text-slate-500 mt-1">Ren XL, <strong class="text-slate-800 underline">Yang B<sup>#</sup></strong></p>
                         </li>
-
-                        <!-- 论文 3 -->
-                        <li class="relative pl-5 group border-l-2 border-slate-100 hover:border-blue-500 transition-colors">
-                            <div class="flex flex-wrap items-center gap-2 mb-1">
-                                <span class="text-xs font-bold text-slate-700 bg-slate-50 px-1.5 py-0.5 rounded border border-slate-200">Nutrition Journal</span>
-                                <span class="text-xs font-semibold text-slate-400">2026</span>
+                        <li class="p-4 rounded-xl bg-slate-50/70 border border-slate-100 flex items-start gap-3">
+                            <span class="p-2 rounded bg-indigo-50 text-indigo-600 mt-0.5"><i class="fa-solid fa-users text-xs"></i></span>
+                            <div>
+                                <p class="font-bold text-slate-800 text-[0.9rem]">Vice Chairman</p>
+                                <p class="text-xs text-slate-500 mt-0.5">Food Nutrition Council, China Association of Gerontology and Geriatrics (2021 – 2026)</p>
                             </div>
-                            <h4 class="font-bold text-slate-800 text-[1.025rem] leading-snug group-hover:text-blue-600 transition-colors">
-                                Seafood consumption and incident diabetes mellitus in middle-aged and elderly Chinese: results from the 4 C study
-                            </h4>
-                            <p class="text-xs text-slate-500 mt-1">Chen W, <strong class="text-slate-800 underline">Yang B<sup>#</sup></strong>, Gu XJ<sup>#</sup></p>
                         </li>
-
-                        <!-- 论文 4 -->
-                        <li class="relative pl-5 group border-l-2 border-slate-100 hover:border-blue-500 transition-colors">
-                            <div class="flex flex-wrap items-center gap-2 mb-1">
-                                <span class="text-xs font-bold text-slate-700 bg-slate-50 px-1.5 py-0.5 rounded border border-slate-200">J Diabetes</span>
-                                <span class="text-xs font-semibold text-slate-400">2025</span>
+                        <li class="p-4 rounded-xl bg-slate-50/70 border border-slate-100 flex items-start gap-3">
+                            <span class="p-2 rounded bg-indigo-50 text-indigo-600 mt-0.5"><i class="fa-solid fa-award text-xs"></i></span>
+                            <div>
+                                <p class="font-bold text-slate-800 text-[0.9rem]">Research Contribution Award</p>
+                                <p class="text-xs text-slate-500 mt-0.5">Asian Pacific Society of Clinical Nutrition (APSCN) (2023)</p>
                             </div>
-                            <h4 class="font-bold text-slate-800 text-[1.025rem] leading-snug group-hover:text-blue-600 transition-colors">
-                                First-Degree Family History of Diabetes Is Associated with the Presence of Depressive Symptoms Independent of Lifestyle Risk Factors and Cardiometabolic Risk Factors
-                            </h4>
-                            <p class="text-xs text-slate-500 mt-1">Chen MY, <strong class="text-slate-800 underline">Yang B<sup>#</sup></strong>, Gu XJ<sup>#</sup>, Hu Xiang<sup>#</sup></p>
                         </li>
-
-                        <!-- 论文 5 -->
-                        <li class="relative pl-5 group border-l-2 border-slate-100 hover:border-blue-500 transition-colors">
-                            <div class="flex flex-wrap items-center gap-2 mb-1">
-                                <span class="text-xs font-bold text-slate-700 bg-slate-50 px-1.5 py-0.5 rounded border border-slate-200">European Journal of Nutrition</span>
-                                <span class="text-xs font-semibold text-slate-400">2025</span>
+                        <li class="p-4 rounded-xl bg-slate-50/70 border border-slate-100 flex items-start gap-3">
+                            <span class="p-2 rounded bg-indigo-50 text-indigo-600 mt-0.5"><i class="fa-solid fa-user-tie text-xs"></i></span>
+                            <div>
+                                <p class="font-bold text-slate-800 text-[0.9rem]">Distinguished Expert</p>
+                                <p class="text-xs text-slate-500 mt-0.5">Food & Nutrition Committee, China Gerontology and Geriatrics Society (2023)</p>
                             </div>
-                            <h4 class="font-bold text-slate-800 text-[1.025rem] leading-snug group-hover:text-blue-600 transition-colors">
-                                Inverse association between eicosapentaenoic acid and incident colorectal cancer: a dose-response meta-analysis of twenty-six independent prospective cohorts
-                            </h4>
-                            <p class="text-xs text-slate-500 mt-1">Chen W, <strong class="text-slate-800 underline">Yang B<sup>#</sup></strong></p>
                         </li>
-
-                        <!-- 论文 6 -->
-                        <li class="relative pl-5 group border-l-2 border-slate-100 hover:border-blue-500 transition-colors">
-                            <div class="flex flex-wrap items-center gap-2 mb-1">
-                                <span class="text-xs font-bold text-slate-700 bg-slate-50 px-1.5 py-0.5 rounded border border-slate-200">Int J Food Sci Nutr</span>
-                                <span class="text-xs font-semibold text-slate-400">2025</span>
+                        <li class="p-4 rounded-xl bg-slate-50/70 border border-slate-100 flex items-start gap-3">
+                            <span class="p-2 rounded bg-indigo-50 text-indigo-600 mt-0.5"><i class="fa-solid fa-chalkboard-user text-xs"></i></span>
+                            <div>
+                                <p class="font-bold text-slate-800 text-[0.9rem]">Outstanding Teacher</p>
+                                <p class="text-xs text-slate-500 mt-0.5">International Curriculums, Wenzhou Medical University (2021)</p>
                             </div>
-                            <h4 class="font-bold text-slate-800 text-[1.025rem] leading-snug group-hover:text-blue-600 transition-colors">
-                                Inverse association of healthy diet scores with non-alcoholic fatty liver disease among Chinese patients with type 2 diabetes mellitus
-                            </h4>
-                            <p class="text-xs text-slate-500 mt-1">Gu X, <strong class="text-slate-800 underline">Yang B<sup>#</sup></strong></p>
                         </li>
-
-                        <!-- 论文 7 -->
-                        <li class="relative pl-5 group border-l-2 border-slate-100 hover:border-blue-500 transition-colors">
-                            <div class="flex flex-wrap items-center gap-2 mb-1">
-                                <span class="text-xs font-bold text-slate-700 bg-slate-50 px-1.5 py-0.5 rounded border border-slate-200">Front Nutr</span>
-                                <span class="text-xs font-semibold text-slate-400">2025</span>
-                            </div>
-                            <h4 class="font-bold text-slate-800 text-[1.025rem] leading-snug group-hover:text-blue-600 transition-colors">
-                                Increased intake of marine fish contributed to a decreased odds of comorbid depressive symptoms and coronary heart disease in Chinese adults
-                            </h4>
-                            <p class="text-xs text-slate-500 mt-1">Fan YC, <strong class="text-slate-800 underline">Yang B<sup>#</sup></strong></p>
-                        </li>
-
-                        <!-- 论文 8 -->
-                        <li class="relative pl-5 group border-l-2 border-slate-100 hover:border-blue-500 transition-colors">
-                            <div class="flex flex-wrap items-center gap-2 mb-1">
-                                <span class="text-xs font-bold text-slate-700 bg-slate-50 px-1.5 py-0.5 rounded border border-slate-200">British Journal of Nutrition</span>
-                                <span class="text-xs font-semibold text-slate-400">2024</span>
-                            </div>
-                            <h4 class="font-bold text-slate-800 text-[1.025rem] leading-snug group-hover:text-blue-600 transition-colors">
-                                Causal association of plasma n-3 PUFA with peptic ulcer disease: a two-sample Mendelian randomization study
-                            </h4>
-                            <p class="text-xs text-slate-500 mt-1">Dai ZB, <strong class="text-slate-800 underline">Yang B<sup>#</sup></strong></p>
-                        </li>
-
-                        <!-- 论文 9 -->
-                        <li class="relative pl-5 group border-l-2 border-slate-100 hover:border-blue-500 transition-colors">
-                            <div class="flex flex-wrap items-center gap-2 mb-1">
-                                <span class="text-xs font-bold text-slate-700 bg-slate-50 px-1.5 py-0.5 rounded border border-slate-200">European Journal of Clinical Nutrition</span>
-                                <span class="text-xs font-semibold text-slate-400">2024</span>
-                            </div>
-                            <h4 class="font-bold text-slate-800 text-[1.025rem] leading-snug group-hover:text-blue-600 transition-colors">
-                                Association of serum saturated fatty acids and mild cognitive impairment: a cross-sectional study
-                            </h4>
-                            <p class="text-xs text-slate-500 mt-1">Li YY, <strong class="text-slate-800 underline">Yang B<sup>#</sup></strong></p>
-                        </li>
-
-                        <!-- 论文 10 -->
-                        <li class="relative pl-5 group border-l-2 border-slate-100 hover:border-blue-500 transition-colors">
-                            <div class="flex flex-wrap items-center gap-2 mb-1">
-                                <span class="text-xs font-bold text-slate-700 bg-slate-50 px-1.5 py-0.5 rounded border border-slate-200">Critical Reviews in Food Science and Nutrition</span>
-                                <span class="text-xs font-semibold text-slate-400">2023</span>
-                            </div>
-                            <h4 class="font-bold text-slate-800 text-[1.025rem] leading-snug group-hover:text-blue-600 transition-colors">
-                                Blood levels of omega-6 fatty acids and coronary heart disease: a systematic review and meta-analysis of observational epidemiology
-                            </h4>
-                            <p class="text-xs text-slate-500 mt-1">Ren XL, <strong class="text-slate-800 underline">Yang B<sup>#</sup></strong></p>
-                        </li>
-
-                        <!-- 论文 11 -->
-                        <li class="relative pl-5 group border-l-2 border-slate-100 hover:border-blue-500 transition-colors">
-                            <div class="flex flex-wrap items-center gap-2 mb-1">
-                                <span class="text-xs font-bold text-slate-700 bg-slate-50 px-1.5 py-0.5 rounded border border-slate-200">Nutrients</span>
-                                <span class="text-xs font-semibold text-slate-400">2023</span>
-                            </div>
-                            <h4 class="font-bold text-slate-800 text-[1.025rem] leading-snug group-hover:text-blue-600 transition-colors">
-                                Associations between milk intake and sleep disorders in Chinese adults: a cross-sectional study
-                            </h4>
-                            <p class="text-xs text-slate-500 mt-1">JY Lao, <strong class="text-slate-800 underline">Yang B<sup>#</sup></strong></p>
-                        </li>
-
-                        <!-- 论文 12 -->
-                        <li class="relative pl-5 group border-l-2 border-slate-100 hover:border-blue-500 transition-colors">
-                            <div class="flex flex-wrap items-center gap-2 mb-1">
-                                <span class="text-xs font-bold text-blue-700 bg-blue-50 px-1.5 py-0.5 rounded border border-blue-200">Progress in Lipid Research</span>
-                                <span class="text-xs font-semibold text-slate-400">2022</span>
-                            </div>
-                            <h4 class="font-bold text-slate-800 text-[1.025rem] leading-snug group-hover:text-blue-600 transition-colors">
-                                Comparative efficacy of omega-3 polyunsaturated fatty acids on major cardiovascular events: A network meta-analysis of randomised controlled trials
-                            </h4>
-                            <p class="text-xs text-slate-500 mt-1"><strong class="text-slate-800 underline">Yang B<sup>*</sup></strong>, Su KP</p>
-                        </li>
-
                     </ul>
                 </section>
-                
+
+                <!-- 会议主持与受邀报告 -->
+                <section class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-8 space-y-4">
+                    <h2 class="text-2xl font-bold text-slate-900 serif-title">Conference Leadership & Invited Lectures</h2>
+                    
+                    <div class="space-y-4">
+                        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 border-b border-slate-100 pb-1">Session Chairmanship & Executive Roles</h3>
+                        <ul class="space-y-3 text-slate-600 text-sm">
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-play text-indigo-500 mt-1 shrink-0 text-xs"></i>
+                                <span><strong>Session Chair</strong>, Session on Clinical Research and Translation, 4th International Symposium on Omega-3 Fatty Acids and Global Health (2025) | Dongguan, China</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-play text-indigo-500 mt-1 shrink-0 text-xs"></i>
+                                <span><strong>Session Chair</strong>, Session on Fatty Acids and Human Health, 8th Cross-Strait, Hong Kong, and Macao Congress on Nutritional Science (2025) | Xi'an, China</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-play text-indigo-500 mt-1 shrink-0 text-xs"></i>
+                                <span><strong>Session Chair</strong>, Session on Physical and Mental Health, 3rd International Symposium on Omega-3 Fatty Acids and Global Health (2024) | Dongguan, China</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-play text-indigo-500 mt-1 shrink-0 text-xs"></i>
+                                <span><strong>Executive Forum Chair</strong>, Youth Scholar Research Forum, Food and Nutrition Council, China Association of Gerontology and Geriatrics (4 Consecutive Sessions, 2021 – 2024) | Beijing, China</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-circle-play text-indigo-500 mt-1 shrink-0 text-xs"></i>
+                                <span><strong>Conference Organizer & Chair</strong>, 2023 Lifecycle Nutrition and Health Innovation Forum & 1st Public Health Training Course, Wenzhou Medical University (2023) | Wenzhou, China</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="space-y-4 pt-2">
+                        <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 border-b border-slate-100 pb-1">Selected Keynote Presentations</h3>
+                        <ul class="space-y-3 text-slate-600 text-sm">
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-microphone text-indigo-500 mt-1 shrink-0 text-xs"></i>
+                                <span><strong>Invited Keynote Speaker</strong> (1st, 2nd, 3rd, & 4th Annual Sessions), International Forum on Fatty Acids and Human Health (Organized by the International Society for Omega-3 Research - ISOR)</span>
+                            </li>
+                            <li class="flex items-start gap-2.5">
+                                <i class="fa-solid fa-microphone text-indigo-500 mt-1 shrink-0 text-xs"></i>
+                                <span><strong>Invited Speaker & Panelist</strong>, 3rd International Symposium on Omega-3 and Global Health (Cardiovascular Disease Tracks, organized by ISOR)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- 学术代表性论文列表 (2022-2026 完整的 12 篇代表作) -->
+                <section class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-8 space-y-4">
+                    <h2 class="text-2xl font-bold text-slate-900 serif-title">Selected Publications (2022 – 2026)</h2>
+                    <div class="text-xs text-slate-500 bg-slate-50 p-3 rounded-lg border border-slate-100/80 mb-6 leading-relaxed">
+                        <p class="font-semibold"><i class="fa-solid fa-info-circle text-indigo-500 mr-1"></i> Format Note:</p>
+                        <p class="mt-0.5">Papers sorted reverse-chronologically. <strong class="underline">Underlined Name</strong> denotes core authorship. <strong class="text-indigo-600">*</strong> indicates First Author, <strong class="text-indigo-600">#</strong> indicates Corresponding Author.</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        
+                        <!-- Paper 1 -->
+                        <div class="group relative pl-0 hover:pl-2 transition-all duration-200 border-l-0 hover:border-l-4 hover:border-indigo-500 py-1">
+                            <div class="flex flex-wrap items-center gap-2 mb-1.5">
+                                <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 text-[10px] font-bold">2026</span>
+                                <span class="px-2 py-0.5 rounded bg-amber-50 text-amber-800 text-[10px] font-bold">Redox Biology</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-600 text-[10px] font-semibold">Under Review</span>
+                            </div>
+                            <h3 class="font-bold text-slate-800 text-sm leading-snug">
+                                Circulating α-Linolenic Acid and Biological Aging Acceleration in Diabetes: Insights from Two Independent Populations and Exploratory Mediation by Oxidative Stress
+                            </h3>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Hu X, <span class="underline font-bold">Yang B</span><sup>#</sup>.
+                            </p>
+                            <p class="text-xs text-slate-400 italic mt-0.5">Redox Biology, 2026.</p>
+                        </div>
+
+                        <!-- Paper 2 -->
+                        <div class="group relative pl-0 hover:pl-2 transition-all duration-200 border-l-0 hover:border-l-4 hover:border-indigo-500 py-1">
+                            <div class="flex flex-wrap items-center gap-2 mb-1.5">
+                                <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 text-[10px] font-bold">2026</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 text-[10px] font-bold">Nutrition Journal</span>
+                                <span class="px-2 py-0.5 rounded bg-blue-50 text-blue-700 text-[10px] font-semibold">JCR Q1</span>
+                            </div>
+                            <h3 class="font-bold text-slate-800 text-sm leading-snug">
+                                ω-3 polyunsaturated fatty acids and mortality risk in depression: immune-inflammatory mediation in NHANES 1999–2018
+                            </h3>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Ren XL, <span class="underline font-bold">Yang B</span><sup>#</sup>.
+                            </p>
+                            <p class="text-xs text-slate-400 italic mt-0.5">Nutrition Journal, 2026.</p>
+                        </div>
+
+                        <!-- Paper 3 -->
+                        <div class="group relative pl-0 hover:pl-2 transition-all duration-200 border-l-0 hover:border-l-4 hover:border-indigo-500 py-1">
+                            <div class="flex flex-wrap items-center gap-2 mb-1.5">
+                                <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 text-[10px] font-bold">2026</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 text-[10px] font-bold">Nutrition Journal</span>
+                                <span class="px-2 py-0.5 rounded bg-blue-50 text-blue-700 text-[10px] font-semibold">JCR Q1</span>
+                            </div>
+                            <h3 class="font-bold text-slate-800 text-sm leading-snug">
+                                Seafood consumption and incident diabetes mellitus in middle-aged and elderly Chinese: results from the 4 C study
+                            </h3>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Chen W, <span class="underline font-bold">Yang B</span><sup>#</sup>, Gu XJ<sup>#</sup>.
+                            </p>
+                            <p class="text-xs text-slate-400 italic mt-0.5">Nutrition Journal, 2026.</p>
+                        </div>
+
+                        <!-- Paper 4 -->
+                        <div class="group relative pl-0 hover:pl-2 transition-all duration-200 border-l-0 hover:border-l-4 hover:border-indigo-500 py-1">
+                            <div class="flex flex-wrap items-center gap-2 mb-1.5">
+                                <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 text-[10px] font-bold">2025</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 text-[10px] font-bold">Journal of Diabetes</span>
+                                <span class="px-2 py-0.5 rounded bg-blue-50 text-blue-700 text-[10px] font-semibold">JCR Q2</span>
+                            </div>
+                            <h3 class="font-bold text-slate-800 text-sm leading-snug">
+                                First-Degree Family History of Diabetes Is Associated with the Presence of Depressive Symptoms Independent of Lifestyle Risk Factors and Cardiometabolic Risk Factors
+                            </h3>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Chen MY, <span class="underline font-bold">Yang B</span><sup>#</sup>, Gu XJ<sup>#</sup>, Hu Xiang<sup>#</sup>.
+                            </p>
+                            <p class="text-xs text-slate-400 italic mt-0.5">J Diabetes, 2025.</p>
+                        </div>
+
+                        <!-- Paper 5 -->
+                        <div class="group relative pl-0 hover:pl-2 transition-all duration-200 border-l-0 hover:border-l-4 hover:border-indigo-500 py-1">
+                            <div class="flex flex-wrap items-center gap-2 mb-1.5">
+                                <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 text-[10px] font-bold">2025</span>
+                                <span class="px-2 py-0.5 rounded bg-amber-50 text-amber-800 text-[10px] font-bold">Eur J Nutr</span>
+                                <span class="px-2 py-0.5 rounded bg-blue-50 text-blue-700 text-[10px] font-semibold">JCR Q1</span>
+                            </div>
+                            <h3 class="font-bold text-slate-800 text-sm leading-snug">
+                                Inverse association between eicosapentaenoic acid and incident colorectal cancer: a dose-response meta-analysis of twenty-six independent prospective cohorts
+                            </h3>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Chen W, <span class="underline font-bold">Yang B</span><sup>#</sup>.
+                            </p>
+                            <p class="text-xs text-slate-400 italic mt-0.5">European Journal of Nutrition, 2025.</p>
+                        </div>
+
+                        <!-- Paper 6 -->
+                        <div class="group relative pl-0 hover:pl-2 transition-all duration-200 border-l-0 hover:border-l-4 hover:border-indigo-500 py-1">
+                            <div class="flex flex-wrap items-center gap-2 mb-1.5">
+                                <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 text-[10px] font-bold">2025</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 text-[10px] font-bold">Int J Food Sci Nutr</span>
+                                <span class="px-2 py-0.5 rounded bg-blue-50 text-blue-700 text-[10px] font-semibold">JCR Q2</span>
+                            </div>
+                            <h3 class="font-bold text-slate-800 text-sm leading-snug">
+                                Inverse association of healthy diet scores with non-alcoholic fatty liver disease among Chinese patients with type 2 diabetes mellitus
+                            </h3>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Gu X, <span class="underline font-bold">Yang B</span><sup>#</sup>.
+                            </p>
+                            <p class="text-xs text-slate-400 italic mt-0.5">International Journal of Food Sciences and Nutrition, 2025.</p>
+                        </div>
+
+                        <!-- Paper 7 -->
+                        <div class="group relative pl-0 hover:pl-2 transition-all duration-200 border-l-0 hover:border-l-4 hover:border-indigo-500 py-1">
+                            <div class="flex flex-wrap items-center gap-2 mb-1.5">
+                                <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 text-[10px] font-bold">2025</span>
+                                <span class="px-2 py-0.5 rounded bg-amber-50 text-amber-800 text-[10px] font-bold">Front Nutr</span>
+                                <span class="px-2 py-0.5 rounded bg-blue-50 text-blue-700 text-[10px] font-semibold">JCR Q1</span>
+                            </div>
+                            <h3 class="font-bold text-slate-800 text-sm leading-snug">
+                                Increased intake of marine fish contributed to a decreased odds of comorbid depressive symptoms and coronary heart disease in Chinese adults
+                            </h3>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Fan YC, <span class="underline font-bold">Yang B</span><sup>#</sup>.
+                            </p>
+                            <p class="text-xs text-slate-400 italic mt-0.5">Front Nutr, 2025.</p>
+                        </div>
+
+                        <!-- Paper 8 -->
+                        <div class="group relative pl-0 hover:pl-2 transition-all duration-200 border-l-0 hover:border-l-4 hover:border-indigo-500 py-1">
+                            <div class="flex flex-wrap items-center gap-2 mb-1.5">
+                                <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 text-[10px] font-bold">2024</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 text-[10px] font-bold">BJN</span>
+                                <span class="px-2 py-0.5 rounded bg-blue-50 text-blue-700 text-[10px] font-semibold">JCR Q1</span>
+                            </div>
+                            <h3 class="font-bold text-slate-800 text-sm leading-snug">
+                                Causal association of plasma n-3 PUFA with peptic ulcer disease: a two-sample Mendelian randomization study
+                            </h3>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Dai ZB, <span class="underline font-bold">Yang B</span><sup>#</sup>.
+                            </p>
+                            <p class="text-xs text-slate-400 italic mt-0.5">British Journal of Nutrition, 2024.</p>
+                        </div>
+
+                        <!-- Paper 9 -->
+                        <div class="group relative pl-0 hover:pl-2 transition-all duration-200 border-l-0 hover:border-l-4 hover:border-indigo-500 py-1">
+                            <div class="flex flex-wrap items-center gap-2 mb-1.5">
+                                <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 text-[10px] font-bold">2024</span>
+                                <span class="px-2 py-0.5 rounded bg-amber-50 text-amber-800 text-[10px] font-bold">Eur J Clin Nutr</span>
+                                <span class="px-2 py-0.5 rounded bg-blue-50 text-blue-700 text-[10px] font-semibold">JCR Q1</span>
+                            </div>
+                            <h3 class="font-bold text-slate-800 text-sm leading-snug">
+                                Association of serum saturated fatty acids and mild cognitive impairment: a cross-sectional study
+                            </h3>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Li YY, <span class="underline font-bold">Yang B</span><sup>#</sup>.
+                            </p>
+                            <p class="text-xs text-slate-400 italic mt-0.5">European Journal of Clinical Nutrition, 2024.</p>
+                        </div>
+
+                        <!-- Paper 10 -->
+                        <div class="group relative pl-0 hover:pl-2 transition-all duration-200 border-l-0 hover:border-l-4 hover:border-indigo-500 py-1">
+                            <div class="flex flex-wrap items-center gap-2 mb-1.5">
+                                <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 text-[10px] font-bold">2023</span>
+                                <span class="px-2 py-0.5 rounded bg-slate-100 text-slate-700 text-[10px] font-bold">Crit Rev Food Sci Nutr</span>
+                                <span class="px-2 py-0.5 rounded bg-red-50 text-red-700 text-[10px] font-semibold">IF &gt; 10</span>
+                            </div>
+                            <h3 class="font-bold text-slate-800 text-sm leading-snug">
+                                Blood levels of omega-6 fatty acids and coronary heart disease: a systematic review and meta-analysis of observational epidemiology
+                            </h3>
+                            <p class="text-xs text-slate-500 mt-1">
+                                Ren XL, <span class="underline font-bold">Yang B</span><sup>#</sup>.
+                            </p>
+                            <p class="text-xs text-slate-400 italic mt-0.5">Critical Reviews in Food Science and Nutrition, 2023.</p>
+                        </div>
+
+                        <!-- Paper 11 -->
+                        <div class="group relative pl-0 hover:pl-2 transition-all duration-200 border-l-0 hover:border-l-4 hover:border-indigo-500 py-1">
+                            <div class="flex flex-wrap items-center gap-2 mb-1.5">
+                                <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 text-[10px] font-bold">2023</span>
+                                <span class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 text-[10px] font-bold">Nutrients</span>
+                                <span class="px-2 py-0.5 rounded bg-blue-50 text-blue-700 text-[10px] font-semibold">JCR Q1</span>
+                            </div>
+                            <h3 class="font-bold text-slate-800 text-sm leading-snug">
+                                Associations between milk intake and sleep disorders in Chinese adults: a cross-sectional study
+                            </h3>
+                            <p class="text-xs text-slate-500 mt-1">
+                                JY Lao, <span class="underline font-bold">Yang B</span><sup>#</sup>.
+                            </p>
+                            <p class="text-xs text-slate-400 italic mt-0.5">Nutrients, 2023.</p>
+                        </div>
+
+                        <!-- Paper 12 -->
+                        <div class="group relative pl-0 hover:pl-2 transition-all duration-200 border-l-0 hover:border-l-4 hover:border-indigo-500 py-1">
+                            <div class="flex flex-wrap items-center gap-2 mb-1.5">
+                                <span class="px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 text-[10px] font-bold">2022</span>
+                                <span class="px-2 py-0.5 rounded bg-amber-50 text-amber-800 text-[10px] font-bold">Prog Lipid Res</span>
+                                <span class="px-2 py-0.5 rounded bg-red-50 text-red-700 text-[10px] font-semibold">IF &gt; 15</span>
+                            </div>
+                            <h3 class="font-bold text-slate-800 text-sm leading-snug">
+                                Comparative efficacy of omega-3 polyunsaturated fatty acids on major cardiovascular events: A network meta-analysis of randomised controlled trials
+                            </h3>
+                            <p class="text-xs text-slate-500 mt-1">
+                                <span class="underline font-bold">Yang B</span><sup>*</sup>, Su KP.
+                            </p>
+                            <p class="text-xs text-slate-400 italic mt-0.5">Progress in Lipid Research, 2022.</p>
+                        </div>
+
+                    </div>
+                </section>
+
             </main>
         </div>
-
-        <!-- 页脚 -->
-        <footer class="mt-16 pt-8 border-t border-slate-200 text-center text-xs text-slate-400 space-y-1">
-            <p>&copy; 2026 Dr. Bo Yang. All Rights Reserved. Powered by GitHub Pages.</p>
-            <p>Designed in compliance with international academic standards.</p>
-        </footer>
     </div>
+
+    <!-- 优雅底栏 -->
+    <footer class="bg-white border-t border-slate-100 py-12 mt-20 text-center text-xs text-slate-400">
+        <div class="max-w-7xl mx-auto px-4 space-y-2">
+            <p>&copy; 2026 Dr. Bo Yang. All Rights Reserved. Powered by GitHub Pages.</p>
+            <p>Director of Institute of Lipids Medicine, Wenzhou Medical University | Visiting Researcher at Karolinska Institutet</p>
+        </div>
+    </footer>
 
 </body>
 </html>
